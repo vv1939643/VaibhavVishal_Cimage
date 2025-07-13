@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Vishal Vaibhav || Khabai Tech</title>
+
+	<link rel="icon" href="logo.png">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+		:root{
+			--bg-black-900:#f2f2fc;
+			--bg-black-100:#fdf9ff;
+			--bg-black-50:#e8dfec;
+			--text-black-900:#302e4d;
+			--text-black-700:#504e70;
+			--skin-color:#ec1839;
+		}
+		body{
+			line-height: 1.5;
+			font-size: 16px;
+			font-family: 'Poppins' sans-serif;
+		}
+		*{
+			margin: 0;
+			padding: 0;
+			outline: none;
+			text-decoration: none;
+			box-sizing: border-box;
+		}
+		::before,::after{
+			box-sizing: border-box;
+		}
+		ul{
+			list-style: none;
+		}
+		.section{
+			background: var(--bg-black-900);
+			min-height: 100vh;
+			display: block;
+			padding: 0 30px;
+			opacity: 1;
+		}
+		.hidden{
+			display: none !important;
+		}
+		.main-content{
+			padding-left: 270px;
+		}
+		.padd-15{
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		.container{
+			max-width: 1100px;
+			width: 100%;
+			margin: auto;
+		}
+		.section .container{
+			padding-top: 60px;
+			padding-bottom: 70px;
+		}
+		.section-title{
+			flex: 0 0 100%;
+			max-width: 100%;
+			margin-bottom: 60px;
+		}
+		.section-title h2{
+			font-size: 40px;
+			color: var(--text-black-900);
+			font-weight: 700;
+			position: relative;
+		}
+		.section-title h2::before{
+			content: '';
+			height: 4px;
+			width: 50px;
+			background: var(--skin-color);
+			position: absolute;
+			top: 100%;
+			left: 0;
+		}
+		.section-title h2::after{
+			content: '';
+			height: 4px;
+			width: 25px;
+			background: var(--skin-color);
+			position: absolute;
+			top: 100%;
+			left: 0;
+			margin-top: 8px;
+		}
+		.row{
+			display:flex;
+			flex-wrap: wrap;
+			margin-left: -15px;
+			margin-right: -15px;
+			position: relative;
+		}
+		.btn{
+			font-size: 16px;
+			font-weight: 500;
+			padding: 12px 35px;
+			color: white;
+			border-radius: 40px;
+			display: inline-block;
+			white-space: nowrap;
+			border: none;
+			background:var(--skin-color);
+			transition: all 0.3s ease;
+		}
+		.btn:hover{
+			transform: scale(1.2);
+		}
+		.shadow-dark{
+			box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+		}
+	/* ========== Aside ========== */
+		.aside{
+			width: 270px;
+			background: var(--bg-black-100);
+			position: fixed;
+			left: 0;
+			top: 0;
+			padding: 30px;
+			height: 100%;
+			border-right: 1px solid var(--bg-black-50);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 10;
+		}
+		.aside .logo{
+			position: absolute;
+			top: 50px;
+			font-size: 30px;
+			text-transform: capitalize;
+		}
+		.aside .logo a{
+			color: var(--text-black-900);
+			font-weigth:700;
+			padding: 15px 20px;
+			font-size: 30px;
+			letter-spacing: 5px;
+			position: relative;
+		}
+		.aside .logo a span{
+			font-family: 'Clicker Script',cursive;
+			font-size: 40px;
+		}
+		.aside .logo a::before{
+			content: '';
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border-bottom: 5px solid var(--skin-color);
+			border-left: 5px solid var(--skin-color);
+			bottom: 0;
+			left: 0;
+		}
+		.aside .logo a::after{
+			content: '';
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border-top: 5px solid var(--skin-color);
+			border-right: 5px solid var(--skin-color);
+			top: 0;
+			right: 0;
+		}
+		.aside .nav-toggler{
+			height: 40px;
+			width: 45px;
+			border:1px solid var(--bg-black-50);
+			cursor: pointer;
+			position: fixed;
+			left: 300px;
+			top: 20px;
+			border-radius: 5px;
+			background: var(--bg-black-100);
+			display: none;
+			align-items: center;
+			justify-content: center;
+		}
+		.aside .nav-toggler span{
+			height: 2px;
+			width: 18px;
+			background: red;
+			display: inline-block;
+			position: relative;
+		}
+		.aside .nav-toggler span::before{
+			content: '';
+			height:2px ;
+			width: 18px;
+			background: red;
+			position: absolute;
+			top: -6px;
+			left: 0;
+		}
+		.aside .nav-toggler span::after{
+			content: '';
+			height:2px ;
+			width: 18px;
+			background: red;
+			position: absolute;
+			top: 6px;
+			left: 0;
+		}
+		.aside .nav{
+			margin-top: 50px;
+		}
+		.aside .nav li{
+			margin-bottom: 20px;
+			display: block;
+		}
+		.aside .nav li a{
+			font-size: 16px;
+			font-weight: 600;
+			display: block;
+			border-bottom: 1px solid var(--bg-black-50);
+			color: var(--text-black-900);
+			padding: 5px 15px;
+		}
+		.aside .nav li a:after{
+			content: '';
+			position: absolute;
+			height: 3px;
+			width: 0;
+			background:linear-gradient(to right, #ec1839, #fd004c, #fe9000);
+			left: 70px;margin-top: 27px;
+			transition: 0.4s;
+		}
+		.aside .nav li a:hover:after{
+			width: 50%;
+		}
+		.aside .nav li a:hover{
+			color: var(--skin-color);
+		}
+		.aside .nav li a i .active{
+			color:var(--skin-color);
+		}
+		.aside .nav li a i{
+			margin-right: 15px;
+		}
+
+	/* ======== Home Section ========= */
+		.home{
+			min-height: 100vh;
+			display: flex;
+			color: var(--text-black-900);
+		}
+		.home .home-info{
+			flex: 0 0 60%;
+			max-width: 60%;
+		}
+		.hello{
+			font-size: 30px;
+			margin: 15px 0;
+		}
+		.hello span{
+			font-family: 'Clicker Script', cursive;
+			font-size: 30px;
+			font-weight: 900;
+			color:var(--skin-color);
+		}
+		.my-profession{
+			font-size: 30px;
+			margin: 15px 0;
+		}
+		.typing{
+			color:var(--skin-color);
+		}
+		.home-info p{
+			margin-bottom: 70px;
+			font-size: 20px;
+			color: var(--text-black-700);
+		}
+		.home .home-img{
+			flex: 0 0 40%;
+			max-width: 40%;
+			position: relative;
+			text-align: center;
+		}
+		/*.home-img::after{
+			content: '';
+			position: absolute;
+			height: 80px;
+			width: 80px;
+			border-bottom: 10px solid var(--skin-color);
+			border-right: 10px solid var(--skin-color);
+			left: 310px;
+			bottom: 30px;
+		}
+		.home-img::before{
+			content: '';
+			position: absolute;
+			height: 80px;
+			width: 80px;
+			border-top: 10px solid var(--skin-color);
+			border-left: 10px solid var(--skin-color);
+			right: 288px;
+			top: -15px;
+		}*/
+		.home .home-img img{
+			margin:auto;
+			border-radius: 5px;
+			height: 400px;
+		}
+
+	/* ========== About Section =========== */
+		.about .about-content{
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+		.about .about-content .about-text{
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+		.about .about-content .about-text h3{
+			font-size: 24px;
+			margin-bottom: 15px;
+			font-weight: 700;
+			color: var(--text-black-900);
+		}
+		.about .about-content .about-text h3 span{
+			color: var(--skin-color);
+		}
+		.about .about-content .about-text p{
+			font-size: 16px;
+			line-height: 25px;
+			color: var(--text-black-700);
+		}
+		.about .about-content .personal-info{
+			flex: 0 0 60%;
+			max-width: 60%;
+			margin-top: 40px;
+		}
+		.about .about-content .personal-info .info-items{
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+		.about .about-content .personal-info .info-items p{   
+			font-weight: 600;
+			font-size: 16px;
+			padding: 10px 0;
+			color: var(--text-black-900);
+			border-bottom: 1px solid var(--bg-black-50);
+		}
+		.about .about-content .personal-info .info-items p span{
+			font-weight: 400;
+			color: var(--text-black-700);
+			margin-left: 4px;
+			display: inline-block;
+		}
+		.about .about-content .personal-info .buttons{
+			margin-top: 30px;
+		}
+		.about .about-content .personal-info .buttons .btn{
+			margin-right: 15px;
+			margin-top: 10px;
+		}
+		.about .about-content .skills{
+			flex: 0 0 40%;
+			max-width: 40%;
+			margin-top: 40px;
+		}
+		.about .about-content .skills .skill-item{
+			flex: 0 0 100%;
+			max-width: 100%;
+			margin-bottom: 25px;
+		}
+		.about .about-content .skills .skill-item h5{
+			line-height: 40px;
+			font-weight: 600;
+			font-size: 16px;
+			color: var(--text-black-900);
+			text-transform: capitalize;
+		}
+		.about .about-content .skills .skill-item .progress{
+			background: var(--bg-black-50);
+			height: 7px;
+			border-radius: 4px;
+			width: 100%;
+			position: relative;
+		}
+		.about .about-content .skills .skill-item .progress .progress-in{
+			position: absolute;
+			height: 100%;
+			border-radius: 4px;
+			background: var(--skin-color);
+		}
+		.about .about-content .skills .skill-item .skill-percent{
+			position: absolute;
+			right: 0;
+			color: var(--text-black-900);
+			top: -40px;
+			font-weight: 400;
+			line-height: 40px;
+		}
+		.education, .experience{
+			flex: 0 0 50%;
+			max-width: 50%;
+			margin-top: 30px;
+		}
+		.about .about-content h3.title{
+			font-size: 24px;
+			margin-bottom: 30px;
+			font-weight: 700;
+			color: var(--text-black-900);
+		}
+		.about .about-content .timeline-box{
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+		.about .about-content .timeline{
+			background: var(--bg-black-100);
+			padding: 30px 15px;
+			border: 1px solid var(--bg-black-50);
+			border-radius: 10px;
+			width: 100%;
+			position: relative;
+		}
+		.about .about-content .timeline .timeline-item{
+			position: relative;
+			padding-left: 37px;
+			padding-bottom: 50px;
+		}
+		.about .about-content .timeline .timeline-item::before{
+			content: '';
+			width: 1px;
+			position: absolute;
+			height: 100%;
+			left: 7px;
+			top: 0;
+			background: var(--skin-color);
+		}
+		.about .about-content .timeline .circle-dot{
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 15px;
+			width: 15px;
+			border-radius: 50%;
+			background: var(--skin-color);
+		}
+		.about .about-content .timeline .timeline-date{
+			font-weight: 400;
+			font-size: 14px;
+			margin-bottom:12px ;
+			color: var(--text-black-700);
+		}
+		.about .about-content .timeline .timeline-date .fa{
+			margin-right: 10px;
+		}
+		.timeline .timeline-title{
+			font-weight: 700;
+			font-size: 18px;
+			margin-bottom: 15px;
+			text-transform: capitalize;
+			color: var(--text-black-700);
+		}
+		.about .about-content .timeline .timeline-text{
+			line-height: 25px;
+			font-size: 16px;
+			text-align: justify;
+			color: var(--text-black-7007);
+		}
+
+	/* ========= Service Section ========== */	
+		.service .container{
+			margin-bottom: 40px;
+		}
+		.service .service-item{
+			margin-bottom: 30px;
+			font-size: 0 0 33.33%;
+			max-width: 33.33%;
+		}
+		.service .service-item .service-item-inner{
+			background: var(--bg-black-100);
+			border:1px solid var(--bg-black-50);
+			border-radius: 10px;
+			padding: 30px 15px;
+			text-align: center;
+			transition: all 0.3s ease;
+		}
+		.service .service-item .service-item-inner .service-item-inner:hover{
+			box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+		}
+		.service .service-item .service-item-inner .icon{
+			height: 60px;
+			width: 60px;
+			border-radius: 50%;
+			display: block;
+			margin: 0 auto 30px;
+			text-align: center;
+			transition: all 0 0.3s ease;
+		}
+		.service .service-item .service-item-inner .icon .fa{
+			font-size: 40px;
+			line-height: 60px;
+			color: var(--skin-color);
+		}
+		.service .service-item-inner:hover .icon{
+			background: var(--skin-color);
+		}
+		.service .service-item-inner:hover .icon .fa{
+			font-size: 25px;
+			color:white;
+		}
+		.service .service-item-inner h4{
+			font-size: 18px;
+			margin-bottom: 15px;
+			color: var(--text-black-900);
+			font-weight:700 ;
+			text-transform: capitalize;
+		}
+		.service .service-item-inner p{
+			font-size: 16px;
+			color: var(--text-black-700);
+			line-height: 25px;
+		}
+
+	/* ========= Portfolio Section ========== */
+		.portfolio .container{
+			padding-bottom: 40px;
+		}
+		#portfolio{
+			font-size: 18px;
+			color: var(--text-black-700);
+			margin: auto;
+			margin-bottom: 15px;
+		}
+		.portfolio .portfolio-heading{
+			flex: 0 0 100%;
+			max-width: 100%;
+			margin-bottom: 40px;
+		}
+		.portfolio-heading h2{
+			color: var(--text-black-900);
+			font-weight: 500;
+		}
+		.portfolio-img img{
+			height: 250px;
+			width:100%;
+			display: block;
+		}
+		.portfolio-img img:hover{
+			transform: scale(1.5);
+		}
+		.portfolio .portfolio-item{
+			flex: 0 0 33.33%;
+			max-width: 33.33%;
+			margin-bottom: 30px;
+		}
+		.portfolio .portfolio-item-inner{
+			border: 6px solid var(--bg-black-100);
+			border-radius: 10px;
+			overflow: hidden;
+			cursor: pointer;
+		}
+
+	/* ========= Contact Section ========== */
+		.contact-title{
+			color: var(--skin-color);
+			text-align: center;
+			font-size: 25px;
+			margin-bottom: 20px;
+		}
+		.contact-sub-title{
+			color: var(--text-black-900);
+			text-align: center;
+			font-size: 15px;
+			margin-bottom: 60px;
+		}
+		.contact .contact-info-item{
+			flex: 0 0 25%;
+			margin-bottom: 25%;
+			text-align: center;
+			margin-bottom: 60px;
+		}
+		.contact .contact-info-item .icon{
+			display: inline-block;
+		}
+		.contact .contact-info-item .icon .fa{
+			font-size: 25px;
+			color: var(--skin-color);
+		}
+		.contact .contact-info-item h4{
+			font-size: 18px;
+			font-weight: 700;
+			color: var(--text-black-900);
+			text-transform: capitalize;
+			margin: 15px 0 15px;
+		}
+		.contact .contact-info-item p{
+			font-size: 16px;
+			line-height: 25px;
+			color: var(--text-black-700);
+			font-weight: 400;
+		}
+		.contact .contact-form{
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+		.contact .contact-form .col-6{
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+		.contact .contact-form .col-12{
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+		.contact .contact-form .form-item{
+			margin-bottom: 30px;
+		}
+		.contact .contact-form .form-item .form-control{
+			width: 100%;
+			height: 50px;
+			border-radius: 25px;
+			background: var(--bg-black-100);
+			border: 1px solid var(--bg-black-50);
+			padding: 10px 25px;
+			font-size: 16px;
+			color: var(--text-black-700);
+			transition: all 0.3s ease;
+		}
+		.contact .contact-form .form-item .form-control:focus{
+			box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+		}
+		.contact .contact-form .form-item textarea.form-control{
+			height: 140px;
+		}
+		.contact .contact-form .btn{
+			height: 50px;
+			padding: 0 50px;
+		}
+		@media(max-width:1199px)
+		{
+			.aside{
+				left: -270px;
+			}
+			.main-content{
+				padding-left: 0;
+			}
+			.about .about-content .personal-info .info-item p span{
+				display: block;
+				margin-left: 0;
+			}
+		}
+		@media(max-width:991px)
+		{
+			.contact .contact-info-item,
+			.portfolio .portfolio-item,
+			.service .service-item{
+				flex: 0 0 50%;
+				max-width: 50%;
+			}
+
+			.home .home-info{
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+			.home .row {
+		display: flex;
+		flex-direction: column; /* mobile ke liye column layout */
+	}
+	.home .home-info {
+		order: 2; /* pehle text neeche dikhana */
+	}
+	.home .home-img {
+		order: 1; /* image ko upar le aana */
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.home .home-img img {
+		width: 80%;
+		max-width: 250px;
+		height: auto;
+		border-radius: 10px;
+	}
+}
+		}
+		@media(max-width:760px)
+		{
+			.service .service-item,
+			.portfolio .portfolio-item,
+			.contact .contact-info-item,
+			.contact .contact-form .col-6,
+			.about .about-content .education,
+			.about .about-content .experience,
+			.about .about-content .skills,
+			.about .about-content .personal-info
+			{
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+			.about .about-content .row {
+		flex-direction: column !important;
+	}
+		</style>
+
+</head>
+<body>
+	<!-- ==== Main Container Start ==== -->
+	<div class="main-container">
+	<!-- ====Aside Start ==== -->
+		<div class="aside">
+			<div class="logo">
+				<a href="#" ><span>V</span>aibhav</a>
+			</div>
+			<div class="nav-toggler">
+				<span></span>
+			</div>
+			<ul class="nav">
+				<li><a href="#" class="active"><i class="fa fa-home fa-beat"></i>Home </a></li>
+				<li><a href="#about"><i class="fa fa-user "></i> About </a></li>
+				<li><a href="#service"><i class="fa-solid fa-cog fa-spin" ></i> Services </a></li>
+				<li><a href="#portfolio"><i class="fa fa-briefcase"></i> Portfolio</a></li>
+				<li><a href="#contact"><i class="fa fa-comments"></i> Contact</a></li>
+			</ul>
+		</div>
+<!-- ====Aside End ==== -->
+
+<!-- ==== Main Content Start ==== -->
+		<div class="main-content">
+			<!-- ==== Home Section Start ====-->
+			<section class="home section" data-aos="fade-up">
+				<div class="container">
+					<h1 class="vv"><a href="https://vv1939643.github.io/V.V-Engineering/"> V.V Engineering</a> </h1>
+					<br><br>
+					<div class="row">
+						<div class="home-info padd-15">
+							<h3 class="hello">Hello, my name is <span>Vishal Vaibhav</span></h3>
+							<h3 class="my-profession">I am a <span class="typing">Web Developer</span></h3>
+							<p>Hello! I am a Web Designer and Developer living in Mahua, Bihar. Since Childhood, I had a deep interest in the world of <b> technology </b> - how things work, how websites are built, and how design impacts people. 	 </p>
+							<a href="https://www.instagram.com/vishalvaibhavrajput/ " class="btn hire-me shadow-dark"> Hire Me</a>
+						</div>
+						<div class="home-img padd-15">
+
+						<a href=" https://vv1939643.github.io/V.V-Engineering/"> <img src="1122.jpg" style="height: 300px; width: 290px; "></a>
+						</div>
+					</div>
+				</div>
+			</section>
+<!-- ==== Home Section End ====-->
+
+<!-- ==== About Section Start ==== -->
+			<section class="about section">
+				<div id="about" class="container" data-aos="fade-right">
+					<div class="row">
+						<div class="section-title padd-15">
+							<h2>About Me</h2>
+						</div>
+						</div>
+					<div class="row">
+						<div class="about-content padd-15">
+							<div class="row">
+								<div class="about-text padd-15">
+									<h3>I'm Vishal vaibhav and <span>Web Developer</span></h3>
+									<p>  I'am basically from Bihar. Now 
+I am currently in Bachelor of Computer Applications (BCA) 1st year.
+Recently, I am currently doing my internship at KHABAI TECH, Hajipur.
+</p>
+									<p>I'm a hard working individual who would like to do things with perfection. I love coding.</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="personal-info padd-15">
+									<div class="row">
+										<div class="info-items padd-15">
+											<p>Profile : <span>Front End Developer</span></p>
+										</div>
+										<div class="info-items padd-15">
+											<p>D.O.B : <span>25 November 2005</span></p>
+										</div>
+										<div class="info-items padd-15">
+											<p>Email : <span>vv1939643@gmail.com</span></p>
+										</div>
+										<div class="info-items padd-15">
+											<p>Degree : <span>ADCA + KYP</span></p>
+										</div>
+										<div class="info-items padd-15">
+											<p>Hobby : <span>Cricket & Coding</span></p>
+										</div>
+										<div class="info-items padd-15">
+											<p>City : <span>Hajipur</span></p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="buttons padd-15">
+										</div>
+									</div>
+								</div>
+								<div class="skills padd-15">
+									<div class="row">
+										<div class="skill-item padd-15">
+											<h5>HTML</h5>
+											<div class="progress">
+												<div class="progress-in" style="width:80%;"></div>
+												<div class="skill-percent">80%</div>
+											</div>
+										</div>
+										<div class="skill-item padd-15">
+											<h5>CSS</h5>
+											<div class="progress">
+												<div class="progress-in" style="width:65%;"></div>
+												<div class="skill-percent">65%</div>
+											</div>
+										</div>
+										<div class="skill-item padd-15">
+											<h5>BOOTSTRAP</h5>
+											<div class="progress">
+												<div class="progress-in" style="width:50%;"></div>
+												<div class="skill-percent">50%</div>
+											</div>
+										</div>
+										<div class="skill-item padd-15">
+											<h5>JS</h5>
+											<div class="progress">
+												<div class="progress-in" style="width:20%;"></div>
+												<div class="skill-percent">20%</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="education padd-15" data-aos="fade-right">
+									<h3 class="title">Education</h3>
+									<div class="row">
+										<div class="timeline-box padd-15">
+											<div class="timeline shadow-dark">
+
+								<!-- ==== timeline item ==== -->
+								<div class="timeline-item">
+									<div class="circle-dot"></div>
+									<h3 class="timeline-date">
+									<i class="fa fa-calendar"></i>2025
+									</h3>	
+									<h4 class="timeline-title">Bachelor of Computer Applications (BCA)</h4>
+									<p class="timeline-text"> I am currently pursuing a Bachelor of Computer Applications (BCA) from CIMAGE College Patna, and I am in my first year.
+										<br> College life has made me more serious and focused about my career.
+Along with my studies, I spend quality time with my friends and teachers, which makes this phase of life both memorable and enjoyable.</p>
+									</div>
+
+
+
+								
+									<div class="timeline-item">
+									<div class="circle-dot"></div>
+									<h3 class="timeline-date">
+									<i class="fa fa-calendar"></i>2023 - 2025
+									</h3>	
+									<h4 class="timeline-title">Intermediate in Science</h4>
+									<p class="timeline-text"> I completed my intermediate from H.S Harpur Mirzanagar, Mahua, and passed with First Division in 2025
+										<br> During my studies, I not only gained in depth knowledge in Science but also became more serious and focused about my career through the experiences of college life. Along with academics, i shared many memorable moments with my friends and teachers, and the college environment helped me become more confident and responsible.</p>
+									</div>
+
+									<div class="timeline-item">
+									<div class="circle-dot"></div>
+									<h3 class="timeline-date">
+									<i class="fa fa-calendar"></i>2022 - 2023
+									</h3>	
+									<h4 class="timeline-title">Matriculation</h4>
+									<p class="timeline-text">I have done my matriculation from U.H.S Karihon, Mahua, and passed with 1st division in 2023. Every day I learned new things and enjoyed it with my friends. I was always ready to participate in my school events and won many prizes during my school years. </p>
+									</div>
+
+									<div class="timeline-item">
+									<div class="circle-dot"></div>
+									<h3 class="timeline-date">
+									<i class="fa fa-calendar"></i>2023
+									</h3>	
+									<h4 class="timeline-title">ADCA + KYP Course</h4>
+									<p class="timeline-text">In 2023, I completed the ADCA (Advanced Diploma in Computer Applications) and KYP (Kushal Yuva Program) courses. These courses have enhanced my technical skills and prepared me for future opportunities in the field of computer applications.</p>
+									</div>
+										</div>	
+										</div>
+									</div>
+								</div>
+								<div class="experience padd-15"  data-aos="fade-left">
+									<h3 class="title">Achievement</h3>
+									<div class="row">
+										<div class="timeline-box padd-15">
+											<div class="timeline shadow-dark">
+								<!-- ==== timeline item ==== -->
+								<div class="timeline-item">
+									<div class="circle-dot"></div>
+									<h3 class="timeline-date">
+									<i class="fa fa-star" style="color: gold;"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+									</h3>	
+									<h4 class="timeline-title">Internship </h4>
+									<p class="timeline-text">I am currently working as an internship at Khabai Tech, where I have learned many important aspects related to website design.
+
+I focus on creating thoughtful and purposeful websites that are not only visually appealing but also user-friendly and impactful.
+
+I have a strong passion for coding, as it is the language of creativity through which computer software, mobile applications, and websites are developed.
+
+ </p>
+									</div>
+
+								<div class="timeline-item">
+									<div class="circle-dot"></div>
+									<h3 class="timeline-date">
+									<i class="fa fa-star" style="color: gold;"></i><i class="fa fa-star" style="color: gold;"></i><i class="fa fa-star" style="color: gold;"></i>
+									</h3>
+
+									<h4 class="timeline-title"><img src="https://play-lh.googleusercontent.com/jEwZGCi6DVMYWlJtVHuliR4Dve2eaqbC5NY73uDwCGBHD7l2fx2OxMih_1oHDQXX-Q=w240-h480-rw" style="height: 50px; width: 50px;"> Cricket & Coding</h4>
+									<p class="timeline-text">Since childhood, I have had a deep love for cricket, and I play it well.
+My favorite player and role model is MS Dhoni, who has always been a great source of inspiration for me.
+
+I also have a strong interest in coding, and from a young age, I’ve been passionate about creating games, mobile apps, and websites...</p>
+									</div>
+
+									<div class="timeline-item">
+									<div class="circle-dot"></div>
+									<h3 class="timeline-date">
+									<i class="fa fa-star" style="color: gold;"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+									</h3>	
+									<h4 class="timeline-title">Web Development</h4>
+									<p class="timeline-text">Web development is a rapidly growing field that requires creative thinking, problem-solving skills, and a continuous passion for learning and innovation.
+
+While this career is filled with challenges, it is also highly engaging and rich in innovation.
+
+In today’s digital era, the demand for web developers is rising rapidly across the country, creating excellent job opportunities and strong career prospects in this field. </p>
+									</div>
+								</div>
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+<!-- ==== About Section End ==== -->
+
+
+<!-- ==== Service Section Start ==== -->
+			<section class="service section">
+				<div id="service" class="container">
+					<div class="row">
+						<div class="section-title padd-15">
+							<h2>Services</h2>
+						</div>
+					</div>
+					<div class="row">
+						<!-- ==== Service item Start ==== -->
+						<div class="service-item padd-15" data-aos="zoom-in">
+							<div class="service-item-inner">
+								<div class="icon">
+									<i class="fa fa-mobile-alt"></i>
+								</div>
+								<h4>Web Design</h4>
+								<p>I design the websites beautiful and attractive. I also design sites according to purpose and theme of project. Web development is the work involved in developing a website for the Internet. </p>
+							</div>
+						</div>
+						<!-- ==== Service item End ==== -->
+						<!-- ==== Service item Start ==== -->
+						<div class="service-item padd-15"  data-aos="zoom-in">
+							<div class="service-item-inner">
+								<div class="icon">
+									<i class="fa fa-laptop-code"></i>
+								</div>
+								<h4>HTML & CSS</h4>
+								<p>I have completed multiple projects in the past and I plan on continuing to expand my knowledge of CSS and HTML. This page although inspired by other developers was created by myself.  </p>
+							</div>
+						</div>
+						<!-- ==== Service item End ==== -->
+						<!-- ==== Service item Start ==== -->
+						<div class="service-item padd-15"  data-aos="zoom-in">
+							<div class="service-item-inner">
+								<div class="icon">
+									<i class="fa fa-palette"></i>
+								</div>
+								<h4>Coding</h4>
+								<p>Coding, sometimes called computer programming, is how we communicate with computers. Code tells a computer what actions to take, and writing code is like creating a set of instructions. </p>
+							</div>
+						</div>
+						<!-- ==== Service item End ==== -->
+						</div>
+				</div>
+			</section>
+<!-- ==== Service Section End ==== -->
+
+<!-- ==== Portfolio Section Start ==== -->
+			<section id="portfolio" class="portfolio section">
+				<div class="container">
+					<div class="row">
+						<div class="section-title padd-15">
+							<h2>Portfolio</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="portfolio-heading padd-15">
+							<h2>My Last Projects :</h2>
+						</div>
+					</div>
+					<div class="row">
+						<p id="portfolio">I enjoy taking complex problems and turning them into simple and beautiful interface designs. Here's a taste of my work... </p>
+					</div>
+					<div class="row">
+						<!-- ==== portfolio item start ===== -->
+						<div class="portfolio-item padd-15"  data-aos="zoom-in">
+							<div class="portfolio-item-inner shadow-dark">
+								<div class="portfolio-img">
+								<a href="dogrun.html"><video src="dogrun.mp4" autoplay muted loop width="100%" height="240px"></video></a>
+								</div>
+							</div>
+						</div>
+						<!-- ==== portfolio item end ===== -->
+						<!-- ==== portfolio item start ===== -->
+						<div class="portfolio-item padd-15"  data-aos="zoom-in">
+							<div class="portfolio-item-inner shadow-dark">
+								<div class="portfolio-img">
+								<a href="box animation.html"><video src="BOX.mp4" autoplay muted loop width="100%" height="240px"></video></a>
+								</div>
+							</div>
+						</div>
+						<!-- ==== portfolio item end ===== -->
+						<!-- ==== portfolio item start ===== -->
+						<div class="portfolio-item padd-15"  data-aos="zoom-in">
+							<div class="portfolio-item-inner shadow-dark">
+								<div class="portfolio-img">
+								<a href="heart.html"><video src="heart.mp4" autoplay muted loop width="100%" height="240px"></video></a>
+								</div>
+							</div>
+						</div>
+						<!-- ==== portfolio item end ===== -->
+						<!-- ==== portfolio item start ===== -->
+						<div class="portfolio-item padd-15"  data-aos="zoom-in">
+							<div class="portfolio-item-inner shadow-dark">
+								<div class="portfolio-img">
+								<a href="mahi5.html"><img src="hii.png"></a>
+								</div>
+							</div>
+						</div>
+						<!-- ==== portfolio item end ===== -->
+						<!-- ==== portfolio item start ===== -->
+						<div class="portfolio-item padd-15" data-aos="zoom-in">
+							<div class="portfolio-item-inner shadow-dark">
+								<div class="portfolio-img">
+								<a href="mahi3.html"><img src="coffee12.png"></a>
+								</div>
+							</div>
+						</div>
+						<!-- ==== portfolio item end ===== -->
+						<!-- ==== portfolio item start ===== -->
+						<div class="portfolio-item padd-15"  data-aos="zoom-in">
+							<div class="portfolio-item-inner shadow-dark">
+								<div class="portfolio-img">
+								<a href="handup and down.html"><video src="hand.mp4" autoplay muted loop width="100%" height="230px"></video></a>
+								</div>
+							</div>
+						</div>
+						<!-- ==== portfolio item end ===== -->
+					</div>
+				</div>
+			</section>
+<!-- ==== Portfolio Section End ==== -->
+
+<!-- ==== Contact Section Start ==== -->
+			<section class="contact section" data-aos="fade-up">
+				<div id="contact" class="container">
+					<div class="row">
+						<div class="section-title padd-15">
+							<h2>Contact Me</h2>
+						</div>
+					</div>
+					<h3 class="contact-title padd-15">Have You Any Questions ?</h3>
+					<h4 class="contact-sub-title padd-15">I'M AT YOUR SERVICES</h4>
+					<div class="row">
+						<!-- ==== Contact info item start ==== -->
+						<div class="contact-info-item padd-15">
+							<div class="icon"><i class="fa fa-phone"></i></div>
+							<h4>Call Us On</h4>
+							<p>+91 7368060721</p>
+						</div> 
+						<!-- ==== Contact info item end ==== --> 
+						<!-- ==== Contact info item start ==== -->
+						<div class="contact-info-item padd-15">																				
+							<div class="icon"><i class="fa fa-map-marker-alt"></i></div>
+							<h4>Office</h4>
+							<p>V.V Engineering</p>
+						</div> 
+						<!-- ==== Contact info item end ==== -->
+						<!-- ==== Contact info item start ==== -->
+						<div class="contact-info-item padd-15">
+							<div class="icon"><i class="fa fa-envelope"></i></div>
+							<h4>Email</h4>
+							<p>vv1939643@gmail.com</p>
+						</div> 
+						<!-- ==== Contact info item end ==== -->
+						<!-- ==== Contact info item start ==== -->
+						<div class="contact-info-item padd-15">
+							<div class="icon"><i class="fa fa-globe-europe"></i></div>
+							<h4>Website</h4>
+							<p><a href="https://vv1939643.github.io/V.V-Engineering/">WWW.V.V Engieering</a> </p>
+						</div> 
+						<!-- ==== Contact info item end ==== -->   
+					</div>
+					<h3 class="contact-title padd-15">SEND ME AN EMAIL</h3>
+					<h4 class="contact-sub-title padd-15">I'M VERY RESPONSIVE TO MESSAGES</h4>
+					<!-- ==== Contact Form ==== -->
+					<div class="row">
+						<div class="contact-form padd-15">
+							<div class="row">
+								<form action="https://formsubmit.co/vv1939643@gmail.com" method="POST" class="contact-form padd-15">
+  <!-- Optional: Disable CAPTCHA -->
+  <input type="hidden" name="_captcha" value="false">
+  <!-- Optional: Redirect after submit -->
+  <input type="hidden" name="_next" value="https://thankyoupage.com">
+
+  <div class="row">
+    <div class="form-item col-6 padd-15">
+      <input type="text" name="name" class="form-control" placeholder="Name" required>
+    </div>
+    <div class="form-item col-6 padd-15">
+      <input type="email" name="email" class="form-control" placeholder="Email" required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-item col-12 padd-15">
+      <input type="text" name="subject" class="form-control" placeholder="Subject">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-item col-12 padd-15">
+      <textarea name="message" class="form-control" placeholder="Message" required></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-item col-12 padd-15">
+      <button type="submit" class="btn shadow-dark">Send Message</button>
+    </div>
+  </div>
+</form>
+
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- ==== Contact Section End ==== -->
+		</div>
+		<!-- ==== Main Content End ==== -->
+	</div>
+	
+	<!-- ==== Main Container End ==== -->
+
+	<!-- ===== Javascript ===== -->
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init(
+    	{
+    		offset:250,
+    		duration:1000
+    	});
+  </script>
+  
+</body>
+</html>
